@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Kotlin-specific
+*.class
+*.jar
+*.war
+*.ear
+*.kotlin_metadata
+*.kotlin_module
+
+# Test reports
+test-results/
+reports/
