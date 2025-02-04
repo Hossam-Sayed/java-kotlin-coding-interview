@@ -24,8 +24,9 @@ fun getPlayerAMove(random: Random = Random()): Move {
 
 fun getPlayerBMove(): Move = Move.ROCK
 
-fun main() {
-    val totalRounds = 100
+data class GameResults(val winsA: Int, val winsB: Int, val draws: Int)
+
+fun simulateGame(totalRounds: Int = 100): GameResults {
     var winsA = 0
     var winsB = 0
     var draws = 0
@@ -40,7 +41,12 @@ fun main() {
         }
     }
 
-    println("Player A wins $winsA of $totalRounds games")
-    println("Player B wins $winsB of $totalRounds games")
-    println("Draws: $draws of $totalRounds games")
+    return GameResults(winsA, winsB, draws)
+}
+
+fun main() {
+    val results = simulateGame()
+    println("Player A wins ${results.winsA} of 100 games")
+    println("Player B wins ${results.winsB} of 100 games")
+    println("Draws: ${results.draws} of 100 games")
 }
